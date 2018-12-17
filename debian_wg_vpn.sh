@@ -54,7 +54,7 @@ echo "[Interface]
 PrivateKey = $(cat sprivatekey)
 
 # VPN中本机的内网IP，一般默认即可，除非和你服务器或客户端设备本地网段冲突
-Address = 10.0.0.1/24 
+Address = 192.168.0.1/24 
 
 # 运行 WireGuard 时要执行的 iptables 防火墙规则，用于打开NAT转发之类的。
 # 如果你的服务器主网卡名称不是 eth0 ，那么请修改下面防火墙规则中最后的 eth0 为你的主网卡名称。
@@ -78,7 +78,7 @@ MTU = 1420
 PublicKey = $(cat cpublickey)
 
 # VPN内网IP范围，一般默认即可，除非和你服务器或客户端设备本地网段冲突
-AllowedIPs = 10.0.0.2/32" > wg0.conf
+AllowedIPs = 192.168.0.2/32" > wg0.conf
 
 # 生成客户端配置文件
 echo "[Interface]
@@ -86,7 +86,7 @@ echo "[Interface]
 PrivateKey = $(cat cprivatekey)
 
 # VPN内网IP范围
-Address = 10.0.0.2/24
+Address = 192.168.0.2/24
 
 # 解析域名用的DNS
 DNS = 8.8.8.8
